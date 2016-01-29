@@ -33,7 +33,7 @@ gulp.task('inject', function(){
 
     var options = {
         bowerJson: require('./bower.json'),
-        directory: './public/components'
+        directory: './public/app'
     };
 
     return gulp.src(htmlFiles)

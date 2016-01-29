@@ -4,7 +4,11 @@
 'use strict';
 
 var express = require('express'),
-    router = express.Router();
+    router = express.Router(),
+    mongoose = require('mongoose'),
+    config = require('../../config/config'),
+    user = require('../models/users');
+
 
 
 module.exports = function(app){
@@ -13,5 +17,23 @@ module.exports = function(app){
 
 router.get('/register', function(req, res, next){
 
-    res.render('registercompany');
+    res.render('registercompany', {
+        siteTitle: config.siteTitle
+    });
+});
+
+router.post('/register', function(req, res, next){
+
+    req.body.register.created_at = new Date();
+    req.body.register.updated_at = new Date();
+
+    //console.log(req.body.register);
+
+    var u = new user(req.body.register);
+
+    u.save(function(err){
+
+        console.log(err);
+    });
+    res.send('done');
 });

@@ -1,54 +1,77 @@
-<!--=== Content Part ===-->
-<div class="container content">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <form class="reg-page">
-                <div class="reg-header">
-                    <h2>Register a new account</h2>
-                    <p>Already Signed Up? Click <a href="page_login.html" class="color-green">Sign In</a> to login your account.</p>
-                </div>
+<div ng-controller="RegistrationController as register">
 
-                <label>First Name</label>
-                <input type="text" class="form-control margin-bottom-20">
-
-                <label>Last Name</label>
-                <input type="text" class="form-control margin-bottom-20">
-
-                <label>Company</label>
-                <input type="text" class="form-control margin-bottom-20">
-
-                <label>Email Address <span class="color-red">*</span></label>
-                <input type="text" class="form-control margin-bottom-20">
-
-                <label>Phone number <span class="color-red">*</span></label>
-                <input type="text" class="form-control margin-bottom-20">
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label>Password <span class="color-red">*</span></label>
-                        <input type="password" class="form-control margin-bottom-20">
+    <!--=== Content Part ===-->
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <form name="registerFrm" novalidate class="reg-page" ng-submit="register.submit(register)">
+                    <div class="reg-header">
+                        <h2>Register a new account</h2>
+                        <p>Already Signed Up? Click <a href="#" class="color-green">Sign In</a> to login your account.
+                        </p>
                     </div>
-                    <div class="col-sm-6">
-                        <label>Confirm Password <span class="color-red">*</span></label>
-                        <input type="password" class="form-control margin-bottom-20">
+                    <div class="form-group" ng-class="{'has-error': registerFrm.firstname.$touched && registerFrm.firstname.$invalid}">
+                        <label>First Name</label> <span class="color-red">*</span>
+                        <input name="firstname" required type="text" ng-model="register.firstName"
+                               class="form-control margin-bottom-20">
                     </div>
-                </div>
 
-                <hr>
+                    <label>Last Name</label> <span class="color-red">*</span>
+                    <input name="lastname" type="text" ng-model="register.lastName"
+                           class="form-control margin-bottom-20">
 
-                <div class="row">
-                    <div class="col-lg-6 checkbox">
-                        <label>
-                            <input type="checkbox">
-                            I read <a href="page_terms.html" class="color-green">Terms and Conditions</a>
-                        </label>
+                    <label>Company</label> <span class="color-red">*</span>
+                    <input name="company" type="text" ng-model="register.company" class="form-control margin-bottom-20">
+
+                    <label>Email Address <span class="color-red">*</span></label>
+                    <input name="email" type="text"  ng-model="register.email" class="form-control margin-bottom-20">
+                    <div class="help-block"  ng-messages="registerFrm.email.$error" ng-if="registerFrm.phone.$touched">
+                        <p class="text-danger" ng-message="email">Your email is invalid</p>
                     </div>
-                    <div class="col-lg-6 text-right">
-                        <button class="btn-u" type="submit">Register</button>
+
+
+                    <label>Phone number <span class="color-red">*</span></label>
+                    <input name="phone" type="text" ng-model="register.phone" required ng-minlength="5"
+                           ng-maxlength="13" ng-messages="registerFrm.phone.$error"
+                           class="form-control margin-bottom-20">
+
+                    <div class="help-block" ng-messages="registerFrm.phone.$error" ng-if="registerFrm.phone.$touched">
+                        <p class="text-danger" ng-message="minlength">Your phone number is too short.</p>
+                        <p class="text-danger" ng-message="maxlength">Your phone number is too long.</p>
+                        <p class="text-danger" ng-message="required">Your phone number is required.</p>
                     </div>
-                </div>
-            </form>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <label>Password <span class="color-red">*</span></label>
+                            <input name="password" type="password" ng-model="register.password"
+                                   class="form-control margin-bottom-20">
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Confirm Password <span class="color-red">*</span></label>
+                            <input name="passwordConfirm" type="password" ng-model="register.passwordConfirm"
+                                   class="form-control margin-bottom-20">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-lg-6 checkbox">
+                            <label>
+                                <input name="termsConditions" type="checkbox" ng-model="register.termsConditions">
+                                I read <a href="page_terms.html" class="color-green">Terms and Conditions</a>
+                            </label>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            <button class="btn-u" type="submit">Register
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-</div><!--/container-->
-<!--=== End Content Part ===-->
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
+
+</div>

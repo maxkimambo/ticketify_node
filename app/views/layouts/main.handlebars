@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-    <title>Jobs | Unify - Responsive Website Template</title>
+    <title>{{siteTitle}}</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -19,7 +19,7 @@
 
     <!-- CSS Global Compulsory -->
     <!--bower:css-->
-
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css" />
     <!--endbower-->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -57,7 +57,7 @@
     <!--=== Job Img ===-->
     <div class="job-img margin-bottom-30">
         <div class="job-banner">
-            <h2>Discover the Companies You would love to Work for ...</h2>
+            <h2>Discover a new way to travel ...</h2>
         </div>
         <div class="job-img-inputs">
             <div class="container">
@@ -83,9 +83,12 @@
     </div>
     <!--=== End Job Img ===-->
 
-    <!--=== Content Part ===-->
-        {{{body}}}
-    <!--=== End Content Part ===-->
+  <div ng-app="ticketify">
+      <!--=== Content Part ===-->
+      {{{body}}}
+      <!--=== End Content Part ===-->
+
+  </div>
 
     <!--=== Footer Version 3 ===-->
 
@@ -93,11 +96,27 @@
 </div><!--/End Wrapper-->
 {{> footer}}
 <!-- JS Global Compulsory -->
+
+<script src="components/angular/angular.min.js"></script>
+<script src="components/angular-resource/angular-resource.min.js"></script>
+<script src="components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="components/angular-animate/angular-animate.min.js"></script>
+<script src="components/angular-messages/angular-messages.min.js"></script>
+
+
 <!-- bower:js -->
-<script src="../../../public/components/jquery/dist/jquery.js"></script>
-<script src="../../../public/components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="../../../public/components/angular/angular.js"></script>
+<script src="components/jquery/dist/jquery.js"></script>
+<script src="components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="components/lodash/lodash.js"></script>
+<script src="app/webapp.js"></script>
+<script src="app/controllers/registrationController.js"></script>
+<script src="app/services/dataService.js"></script>
+<script src="app/services/urlService.js"></script>
+
 <!-- endbower -->
+
+
+
 <!-- JS Implementing Plugins -->
 
 <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
@@ -108,7 +127,7 @@
 <script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
 <script type="text/javascript" src="assets/plugins/jquery.parallax.js"></script>
 <script type="text/javascript" src="assets/plugins/image-hover/js/touch.js"></script>
-<script type="text/javascript" src="assets/plugins/image-hover/js/modernizr.js"></script>
+<script type="text/javascript" src="componets/modernizr/modernizr/bin/modernizr.js"></script>
 <!-- JS Customization -->
 <script type="text/javascript" src="assets/js/custom.js"></script>
 <!-- JS Page Level -->
