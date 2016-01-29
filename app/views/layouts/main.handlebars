@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>Jobs | Unify - Responsive Website Template</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+    <!-- CSS Global Compulsory -->
+    <!--bower:css-->
+
+    <!--endbower-->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/headers/header-default.css">
+    <link rel="stylesheet" href="assets/css/footers/footer-v3.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/animate.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/image-hover/css/img-hover.css">
+
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="assets/css/pages/page_job.css">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    {{#if ENV_DEVELOPMENT}}
+        <script src="http://localhost:35729/livereload.js"></script>
+    {{/if}}
+
+</head>
+
+<body>
+
+
+<div class="wrapper">
+    <!--=== Header ===-->
+    {{> header}}
+    <!--=== End Header ===-->
+
+    <!--=== Job Img ===-->
+    <div class="job-img margin-bottom-30">
+        <div class="job-banner">
+            <h2>Discover the Companies You would love to Work for ...</h2>
+        </div>
+        <div class="job-img-inputs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4 md-margin-bottom-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                            <input type="text" placeholder="what job you are looking for" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 md-margin-bottom-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                            <input type="text" placeholder="where would you like to work" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn-u btn-block btn-u-dark"> Search Job</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--=== End Job Img ===-->
+
+    <!--=== Content Part ===-->
+        {{{body}}}
+    <!--=== End Content Part ===-->
+
+    <!--=== Footer Version 3 ===-->
+
+    <!--=== End Footer Version 3 ===-->
+</div><!--/End Wrapper-->
+{{> footer}}
+<!-- JS Global Compulsory -->
+<!-- bower:js -->
+<script src="../../../public/components/jquery/dist/jquery.js"></script>
+<script src="../../../public/components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../../../public/components/angular/angular.js"></script>
+<!-- endbower -->
+<!-- JS Implementing Plugins -->
+
+<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery.parallax.js"></script>
+<script type="text/javascript" src="assets/plugins/image-hover/js/touch.js"></script>
+<script type="text/javascript" src="assets/plugins/image-hover/js/modernizr.js"></script>
+<!-- JS Customization -->
+<script type="text/javascript" src="assets/js/custom.js"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        App.initParallaxBg();
+    });
+</script>
+<!--[if lt IE 9]>
+    <script src="assets/plugins/respond.js"></script>
+    <script src="assets/plugins/html5shiv.js"></script>
+    <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
+
+</body>
+</html>
+

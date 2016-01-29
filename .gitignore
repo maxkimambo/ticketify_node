@@ -1,0 +1,5 @@
+node_modules/
+.idea/
+public/assets/css/pages/
+public/components/
+config/config.js
