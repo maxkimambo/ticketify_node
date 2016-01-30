@@ -13,7 +13,7 @@ var userSchema = new Schema({
         password: {type: String, require: true},
         passwordConfirm: {type: String, require: true},
         termsConditions:{type: Boolean, require: true},
-        created_at: Date,
+        created_at: {type:Date, default:  Date.now},
         updated_at: Date
 });
 

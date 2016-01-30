@@ -31,9 +31,15 @@ router.post('/register', function(req, res, next){
 
     var u = new user(req.body.register);
 
-    u.save(function(err){
+    u.save(function(err, register, numAffected){
 
-        console.log(err);
+        if(err){
+            return next(err);
+        }
+        if (numAffected){
+            return res.json(register);
+        }
+
     });
-    res.send('done');
+
 });
