@@ -26,9 +26,9 @@ router.post('/register', function(req, res, next){
     req.body.register.updated_at = new Date();
 
     //console.log(req.body.register);
-    var uRepo = new userRepo(userModel);
+    var uRepo = new userRepo(userModel, req.body.register);
 
-    var saveResult = uRepo.save(req.body.register);
+    var saveResult = uRepo.save();
 
     saveResult.then(function(data){
         console.log(data);
@@ -37,4 +37,15 @@ router.post('/register', function(req, res, next){
       //TODO: deal with error handling
     });
 
+});
+
+router.get('/all', function(req, res){
+
+    var usersRepo = new userRepo(userModel);
+    var result  = usersRepo.find();;
+    result.then(function(data){
+        res.json(data);
+    }, function(err){
+        console.log(err);
+    });
 });
