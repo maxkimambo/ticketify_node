@@ -4,20 +4,21 @@
 "use strict";
 
 var mongoose = require('mongoose');
-var userModel = require('../models/users');
+//var userModel = require('../models/users');
 
 
-function Repository(){
+function Repository(model){
+    this.repoModel = model;
 }
 
-Repository.prototype.save = function(registrationObject, cb){
+Repository.prototype.save = function(entity, cb){
 
-    var user = new userModel(registrationObject);
+    var entitySchema = new this.repoModel(entity);
 
-    user.save(function(err, res, numAffected){
+    entitySchema.save(function(err, res, numAffected){
         cb(err,res, numAffected);
     });
-    return user;
+    return entitySchema;
 };
 
 module.exports = Repository;

@@ -5,12 +5,9 @@
 
 var express = require('express'),
     router = express.Router(),
-    mongoose = require('mongoose'),
     config = require('../../config/config'),
     userRepo = require('../lib/CompanyRepository'),
-    user = require('../models/users');
-
-
+    userModel = require('../models/users');
 
 module.exports = function(app){
    app.use('/', router);
@@ -29,7 +26,8 @@ router.post('/register', function(req, res, next){
     req.body.register.updated_at = new Date();
 
     //console.log(req.body.register);
-    var uRepo = new userRepo();
+    var uRepo = new userRepo(userModel);
+
     uRepo.save(req.body.register, function(err, result, num){
         console.log(err);
         console.log(result);
