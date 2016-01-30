@@ -28,11 +28,10 @@ router.post('/register', function(req, res, next){
     //console.log(req.body.register);
     var uRepo = new userRepo(userModel);
 
-    uRepo.save(req.body.register, function(err, result, num){
-        console.log(err);
-        console.log(result);
-        console.log(num);
-        return res.json(result);
+    var saveResult = uRepo.save(req.body.register);
+    saveResult.then(function(data){
+        console.log(data);
+          return res.json(data.result);
     });
    //// var u = new user(req.body.register);
    ////
