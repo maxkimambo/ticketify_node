@@ -29,23 +29,12 @@ router.post('/register', function(req, res, next){
     var uRepo = new userRepo(userModel);
 
     var saveResult = uRepo.save(req.body.register);
+
     saveResult.then(function(data){
         console.log(data);
           return res.json(data.result);
+    }, function(err){
+      //TODO: deal with error handling
     });
-   //// var u = new user(req.body.register);
-   ////
-   ////var result = u.save(function(err, register, numAffected){
-   ////
-   ////     if(err){
-   ////         return next(err);
-   ////     }
-   ////     if (numAffected){
-   ////         return res.json(register);
-   ////     }
-   ////
-   //// });
-   //
-   // console.log(result);
 
 });

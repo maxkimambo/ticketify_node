@@ -16,6 +16,7 @@ Repository.prototype.save = function(entity){
 
     entitySchema.save(function(err, res, numAffected){
         if (err){
+            //console.log(err);
             deferred.reject(err);
         }
         var data = {};
