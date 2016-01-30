@@ -36,11 +36,17 @@ Repository.prototype.save = function () {
  * Finds all the documents in a collection.
  * @returns {*}
  */
-Repository.prototype.find = function (filter) {
+Repository.prototype.find = function (filter, sort, limit) {
 
     var deferred = q.defer();
-
-    this.repoModel.find(filter,function (err, result) {
+    var query = this.repoModel.find(filter);
+    if (sort){
+        query.sort(sort);
+    }
+    if (limit){
+        query.limit(limit);
+    }
+    query.exec(function (err, result) {
         if (err) {
             return deferred.reject(err);
         }
