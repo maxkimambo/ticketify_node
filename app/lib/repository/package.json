@@ -1,0 +1,18 @@
+{
+  "name": "mongorepo",
+  "version": "0.0.1",
+  "description": "Mongoose repository",
+  "main": "index.js",
+  "dependencies": {
+    "q": "^1.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Mongoose",
+    "repository"
+  ],
+  "author": "Max Kimambo",
+  "license": "ISC"
+}

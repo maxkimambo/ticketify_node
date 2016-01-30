@@ -6,7 +6,7 @@
 var express = require('express'),
     router = express.Router(),
     config = require('../../config/config'),
-    userRepo = require('../lib/CompanyRepository'),
+    userRepo = require('../lib/repository'),
     userModel = require('../models/users');
 
 module.exports = function(app){
