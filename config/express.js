@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
-var exphbs = require('express-handlebars');
+var ejs = require('ejs');
 
 
 module.exports = function (app, config) {
@@ -20,7 +20,7 @@ module.exports = function (app, config) {
         partialsDir: [config.root + '/app/views/partials/']
     }));
     app.set('views', config.root + '/app/views');
-    app.set('view engine', 'handlebars');
+    app.set('view engine', 'ejs');
 
     // app.use(favicon(config.root + '/public/img/favicon.ico'));
     app.use(logger('dev'));
